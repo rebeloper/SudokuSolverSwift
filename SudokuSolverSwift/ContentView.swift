@@ -8,9 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @StateObject private var viewModel = ContentViewModel()
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        Button {
+            viewModel.solve()
+        } label: {
+            Text("Solve")
+        }
+        Button {
+            viewModel.findAllSolutions()
+        } label: {
+            Text("Find all solutions")
+        }
     }
 }
 
